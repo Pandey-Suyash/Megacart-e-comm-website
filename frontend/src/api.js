@@ -74,9 +74,9 @@ export const createReview = async (productId, review) => {
       },
       data: review,
     });
-    // if (response.statusText !== "Created") {
-    //   throw new Error(response.data.message);
-    // }
+    if (response.statusText !== "Created") {
+      throw new Error(response.data.message);
+    }
     return response.data;
   } catch (err) {
     return { error: err.response.data.message || err.message };
@@ -136,9 +136,9 @@ export const uploadProductImage = async (formData) => {
       },
       data: formData,
     });
-    // if (response.statusText !== "Created") {
-    //   throw new Error(response.data.message);
-    // }
+    if (response.statusText !== "Created") {
+      throw new Error(response.data.message);
+    }
     return response.data;
   } catch (err) {
     return { error: err.response.data.message || err.message };
@@ -228,9 +228,9 @@ export const createOrder = async (order) => {
       },
       data: order,
     });
-    // if (response.statusText !== "Created") {
-    //   throw new Error(response.data.message);
-    // }
+    if (response.statusText !== "Created") {
+      throw new Error(response.data.message);
+    }
     return response.data;
   } catch (err) {
     return { error: err.response ? err.response.data.message : err.message };
